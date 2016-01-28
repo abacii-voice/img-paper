@@ -1,0 +1,21 @@
+2016/1/28:
+
+Topics
+- Template, guidelines website, sample paper DNA
+- Maybe use neurite paper later
+- Structure outline
+
+1. Check claims about cell profiler.
+2. Change names.
+3. Use zUnique images for comparison.
+4. Follow NeuriteTracer paper for structure, but not necessarily for format.
+5. Repeat manual drawings for shape analysis. Use parameters from Cell Profiler.
+6. Output all parameters from Cell Profiler.
+
+Pipeline:
+
+1. Change code to allow all shape parameters.
+2. Z Position in code.
+3. Labels for columns in output.
+4. Paper -> include definition of velocities.
+5. Include Z velocity in output.

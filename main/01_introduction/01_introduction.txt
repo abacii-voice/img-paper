@@ -1,0 +1,11 @@
+1. Describe problem in field, and an idea of the solution.
+
+Newly developed microfluidics techniques allow in vitro studies of complex 3D environments. In order to study cells in this environment, 3D imaging is done using a confocal microscope. Due to imaging limitations, image quality is not sufficient for 3D reconstruction using GFP. Brightfield provides accurate cell shapes but is difficult to interact with in 3D. It would be great if there were a way to interact with 3D brightfield data using the GFP.
+
+2. Describe a previous study or studies done to try to solve this problem.
+
+In their 2009 paper, Selinummi et al. attempt to solve this problem by scanning the brightfield in 3D. Although brightfield data does not contain 3D information, intensity at a location will vary as an object moves into and out of focus by moving the current Z plane. This variation can indicate the presence of an object, and can be quantified mathematically to produce a highlighted image showing areas likely to contain objects. This works to a degree in a simple environment, but fails in more complex scenarios. It is unable to determine the Z location of individual objects, differentiate between objects such as cell types and PMDS (plastic compound used as a structural material), or accurately represent the boundary of a cell due to distortion.
+
+3. Describe the goal of the current study
+
+In this study, we used 3D information from a fluorescent GFP channel to allow the segmentation of brightfield images by finding levels with clear edges. This exploited the relationship between the coordinate systems in the images sets.
