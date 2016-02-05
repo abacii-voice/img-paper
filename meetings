@@ -6,10 +6,19 @@ Topics
 - Structure outline
 
 1. Check claims about cell profiler.
+
+Not capable of handling 3D: Issue #524 on Github
+
 2. Change names.
+
+zVar ->
+
 3. Use zUnique images for comparison.
 4. Follow NeuriteTracer paper for structure, but not necessarily for format.
 5. Repeat manual drawings for shape analysis. Use parameters from Cell Profiler.
+
+
+
 6. Output all parameters from Cell Profiler.
 
 Pipeline:
@@ -19,3 +28,7 @@ Pipeline:
 3. Labels for columns in output.
 4. Paper -> include definition of velocities.
 5. Include Z velocity in output.
+
+2016/2/3:
+
+1. 
