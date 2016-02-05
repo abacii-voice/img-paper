@@ -1,6 +1,6 @@
 1. Describe problem in field, and an idea of the solution.
 
-Newly developed microfluidics techniques allow in vitro studies of complex 3D environments. In order to study cells in this environment, 3D imaging is done using a confocal microscope. Due to imaging limitations, image quality is not sufficient for 3D reconstruction using GFP. Brightfield provides accurate cell shapes but is difficult to interact with in 3D. It would be great if there were a way to interact with 3D brightfield data using the GFP.
+Newly developed microfluidics techniques allow in vitro studies of complex 3D environments. In order to study live cells moving in this environment, 3D imaging is done using a confocal microscope. Due to imaging limitations, image quality is not always sufficient for 3D reconstruction using GFP. Brightfield provides accurate cell shapes but is difficult to interact with in 3D. It would be great if there were a way to interact with 3D brightfield data using the GFP.
 
 2. Describe a previous study or studies done to try to solve this problem.
 
