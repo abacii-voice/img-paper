@@ -1,0 +1,8 @@
+Give all details of the microscope setup including makes of equipment.
+
+1. Make of microscope, serial number
+2. Pinhole size, aperture, other camera properties
+3. Type of cancer cells, size, speed, etc.
+4. Contrast, histograms, laser intensity
+5. GFP type, staining method, timescales.
+6. Timing of job imaging
