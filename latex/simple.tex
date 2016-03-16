@@ -56,7 +56,7 @@ Once the profile has been generated, several properties can be used to aide segm
 
 If the algorithm is applied to each XY location in the image, new images can be created using the values of interest such as the Z location and the variance. The image generated using the value of the Z location for each pixel is known here as [[[zMod]]]. It is a height map across the 3D environment. It does not contain enough information for segmentation, but it can be combined with the brightfield data to yield a new image, [[[zBF]]]. The brightfield does not contain intrinsic 3D data, but the sharpness of features in the image is best around a single Z location. This is the location of the object, and consequently, the location specified by [[[zMod]]]. Hence, each value in [[[zMod]]] can be used to select a brightfield value from the 3D stack of brightfield images and place it into the corresponding location in [[[zBF]]]. The result is a single 2D brightfield image containing features from all parts of the environment that are sharp and in-focus, regardless of their original Z location. \\
 
-\section{Results}
+\section{Results and Discussion}
 1. List of steps \\
 
 A graphical layout of the steps taken to modify the images is shown in Figure [[[fig]]]. First, the images are organised by frame and channel. Each frame is loaded as a set of 3D stacks, one for each channel. In this case, only the GFP and the brightfield were used. The GFP is smoothed to reduce noise. A new image, [[[zMod]]], stores the Z position of the point of maximum intensity for each profile. This is analogous to a terrain showing the height of each point in the environment. A new brightfield image, [[[zBF]]], is then created by selecting brightfield pixel values from the 3D stack whose Z position is indicated by the value stored in [[[zMod]]] at the same XY position. In this manner, brightfield pixels are selected only from the brightest regions of the GFP coordinate system, where the objects containing GFP are in-focus and have clear, visible edges suitable for segmentation. The [[[zBF]]] image can then be segmented using conventional 2D segmentation. \\
@@ -64,9 +64,6 @@ A graphical layout of the steps taken to modify the images is shown in Figure [[
 2. Further improvements to segmentation using 3D data \\
 
 2D segmentation algorithms are unable to take account of 3D information that could inform more accurate segmentation of an object. For example, GFP intensity information can be used to highlight areas of an image that contain cells to prevent the segmentation from extending into the background. \\
-
-\section{Discussion}
-
 
 \section{Conclusions}
 
