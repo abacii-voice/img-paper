@@ -1,0 +1,195 @@
+%% This is file `elsarticle-template-1-num.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%%
+%% $Id: elsarticle-template-1-num.tex 149 2009-10-08 05:01:15Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1-num.tex $
+%%
+\documentclass[preprint,12pt,5p,twocolumn]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% The graphicx package provides the includegraphics command.
+\usepackage{graphicx}
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+\journal{Journal Name}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+\title{Image Paper}
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Nicholas Piano}
+
+\address{Cambridge University}
+
+\begin{abstract}
+%% Text of abstract
+Accurate cell segmentation is crucial to biological and medical studies in providing representative data of cell movements and shapes to judge the effects of drugs and other environmental changes. Current methods rely on outlining the cell projected in 2D or a volumetric approximation based on 3D data. A common imaging method is confocal microscopy, where the images stored capture a range of focal planes in an environment. This provides 3D data and the ability to move an object of interest in and out of focus after the images have been captured, potentially offering accurate segmentation. However, conventional segmentation software fails to fully exploit the 3D nature of the data and is unable to make complex associations between image channels.
+
+Here we describe a method for selecting regions of the brightfield channel that contain clear edges suitable for segmentation by determining the XYZ coordinates of bright regions in the GFP. This exploits the relationship between the coordinate systems of the image sets, since the majority of the 3D set of brightfield images is blurred and unsuitable for segmentation. Images of the environment can thus be simplified into a 2D projection that can be readily processed by CellProfiler or ImageJ. This method has been tested on breast cancer cells in a PDMS micro-fluidics environment and yields clear segmentation. This is an improvement over previous 2D methods of image pre-processing, such as maximum or mean Z-projection, which are unable to extract usable information from the 3D environment.
+
+
+\end{abstract}
+
+\begin{keyword}
+Science \sep Publication \sep Complicated
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{S:1}
+
+Accurate measurement of cell morphodynamics is an essential part of live-cell studies. Cell shape can be measured by distinguishing dark edges and bright cell interiors and differentiating them from the background of the image in a process called segmentation. Newly developed microfluidics techniques allow in vitro studies of complex 3D environments. In order to study live cells moving in this environment, 3D imaging is done using a confocal microscope. Cell segmentation is then done using image recognition software such as CellProfiler or ImageJ. Ideally, the cell shape should be captured and analysed in 3D, but imaging limitations can prevent an adequate 3D reconstruction. These limitations include cell overheating from excessive contact with the laser used to produce a fluorescent response, lower resolution from a larger field of view that allows more cells to be imaged, and the necessary time delay between frames to allow the entire field to be imaged. These factors contribute to lower image quality, which prevents the extraction of high-quality shape data from the images. A possible solution is to use the relatively high-quality brightfield images to determine the shape of the cell.
+
+In their 2009 paper, Selinummi et al. attempt to solve this problem by scanning the brightfield in 3D. Although brightfield data does not contain 3D information, intensity at a location will vary as an object moves into and out of focus by moving the current Z plane. This variation can indicate the presence of an object, and can be quantified mathematically to produce a highlighted image showing areas likely to contain objects. This works to a degree in a simple environment, but fails in more complex scenarios. It is unable to determine the Z location of individual objects, differentiate between objects such as different cell types and PMDS (a polymer used as a structural material), or accurately represent the boundary of a cell due to distortion.
+
+In this study, we used 3D information from a Green Fluorescent Protein (GFP) channel to allow the segmentation of brightfield images by finding levels with clear edges. This exploits the relationship between the coordinate systems of the image sets. Conventional cell segmentation software such as CellProfiler fails when presented with a 3D set of brightfield data. The method presented in this study pre-processes the 3D image data to allow segmentation via conventional means. Since the coordinate systems of the brightfield and GFP images represent the same space, high intensity GFP at a single level, Z, and at a fixed location, XY, can indicate the presence of clear, dark edges of an object in the brightfield. For every point, XY, in the image, the corresponding Z level of high intensity GFP can be determined. This can then be used to combine all the high-quality edges into a single 2D image, which is then ready for conventional 2D segmentation.
+
+\section{Materials and methods}
+\label{S:2}
+
+Give all details of the microscope setup including makes of equipment.
+
+1. Make of microscope, serial number
+2. Pinhole size, aperture, other camera properties
+3. Type of cancer cells, size, speed, etc.
+4. Contrast, histograms, laser intensity
+5. GFP type, staining method, timescales.
+6. Timing of job imaging
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}          ==>>  [#]
+%%   \cite[chap. 2]{key} ==>>  [#, chap. 2]
+%%   \citet{key}         ==>>  Author [#]
+
+%% References with bibTeX database:
+
+\bibliographystyle{model1-num-names}
+% \bibliography{sample.bib}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use model1-num-names.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have the following form:
+%%   \bibitem{key}...
+%%
+
+% \bibitem{}
+
+% \end{thebibliography}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-1-num.tex'.
